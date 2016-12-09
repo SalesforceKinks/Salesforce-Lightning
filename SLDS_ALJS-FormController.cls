@@ -10,8 +10,6 @@ public class SLDS_FormController {
     public String strPriority          {get;set;}
     public String strselectedCompany   {get;set;}
     public Integer intDeleteIndex      {get;set;}
-    //public List<Contact> LstContact   {get;set;}
-    
     public List<contact> lstcontacts       {get;set;}
     
     public String strAccountMap        {get;private set;}
@@ -77,8 +75,6 @@ public class SLDS_FormController {
        public PageReference CreateContct() {
             try
             {
-                
-                
                 Contact c = new Contact(
                                         FirstName= strfirstName, 
                                         LastName= strlastName,
@@ -89,9 +85,8 @@ public class SLDS_FormController {
                                         Priority__c = strPriority,
                                         AccountId= strCompanyName
                                         );
-                system.debug('=====contct==='+c);
+                
                 insert c;
-                //ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.CONFIRM, 'Contact Created Successfully!'));
                 return null;
             }
             catch(exception ex) {
